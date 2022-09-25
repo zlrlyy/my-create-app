@@ -28,7 +28,6 @@ module.exports = withAntdLess({
   // Other Config Here...
 
   webpack:(config)=>{
-    console.log(config);
     config.module.rules.forEach(rule => {
       if (rule.test && rule.test.toString().includes('.less')) {
         rule.rules = rule.use.map(useRule => {
