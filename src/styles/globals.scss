@@ -1,0 +1,448 @@
+@import './custom-class.scss';
+@import './variables.scss';
+$primary-color: #ff472e;
+:root {
+  --font-family: $font-family;
+  --primary-color: $primary-color;
+  --primary-bg-color: $primary-bg-color;
+  --text-color: $text-color;
+  --gray-color: $gray-color;
+  --border-radius-base: $border-radius-base;
+  --border-radius-sm: $border-radius-sm;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+html {
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 14px;
+  background-color: var(--primary-bg-color);
+}
+
+html,
+body,
+#root,
+#__next,
+#app {
+  height: 100%;
+}
+
+#root {
+  position: relative;
+}
+
+.icon-spin {
+  -webkit-animation: icon-spin 0.7s infinite linear;
+  animation: icon-spin 0.7s infinite linear;
+}
+
+@-webkit-keyframes icon-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes icon-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+/**
+ * 全局滚动条设置
+ */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  background-color: transparent;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 4px;
+  min-height: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  &:hover,
+  &:active {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+// 全局Modal样式自定义
+.ant-modal-wrap {
+  display: flex;
+  justify-content: center;
+  .ant-modal {
+    top: 0;
+    padding: 0;
+    margin: auto 0;
+
+    .ant-modal-content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .ant-modal-body {
+        flex: 1;
+        overflow-y: auto;
+      }
+    }
+  }
+}
+.custom-modal-wrapper {
+  .ant-modal-header {
+    border-bottom: none;
+  }
+
+  .ant-modal-body {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .ant-modal-footer {
+    border-top: none;
+  }
+
+  .title {
+    font-weight: 600;
+  }
+
+  .text {
+    font-size: 14px;
+    color: #b7b9bf;
+    font-weight: 400;
+  }
+}
+
+// 全局DatePicker样式自定义
+.ant-picker-cell-inner {
+  border-radius: 50% !important;
+
+  &::before {
+    border-radius: 50% !important;
+  }
+}
+
+.ant-modal-footer {
+  .submit-btn-custom {
+    min-width: 68px;
+    height: 36px;
+    background: linear-gradient(96.16deg, #ff385d 0%, #ff472e 100%);
+    border: 0;
+    color: #fff !important;
+    padding: 4px 20px;
+  }
+}
+
+// 全局自定义message样式
+.ant-message-notice-content {
+  padding: 0;
+  .ant-message-error,
+  .ant-message-warning,
+  .ant-message-success {
+    background: #f6ffed;
+    border: 1px solid #73d13d;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #2e2f33;
+    font-family: 'PingFang SC', Arial, sans-serif;
+    padding: 10px 16px;
+  }
+  .ant-message-warning {
+    background: #fffbe6;
+    border: 1px solid #faad14;
+  }
+  .ant-message-error {
+    background: #fff1f0;
+    border: 1px solid rgba(255, 77, 79, 0.5);
+  }
+}
+
+.ant-layout {
+  background: #fff;
+}
+
+.ant-tooltip {
+  max-width: 300px;
+}
+
+.ant-tooltip-inner {
+  a {
+    color: #fff;
+  }
+}
+
+.ant-btn-primary:hover,
+.ant-btn-primary:focus {
+  background: #e82c1a;
+}
+
+//table
+.ant-table-header {
+  border-radius: 8px;
+
+  .ant-table-thead {
+    th {
+      background-color: #fff;
+    }
+    &:hover {
+      th {
+        background-color: #fafafa;
+      }
+    }
+  }
+}
+
+.ant-table {
+  font-family: 'HarmonyOS Sans', 'PingFang SC', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+  td {
+    border-right: none !important;
+  }
+  table {
+    border-top: none;
+  }
+  .ant-table-thead > tr > th {
+    padding: 12px 16px;
+    border-right: none;
+    &:first-child {
+      border-top-left-radius: 8px !important;
+      border-bottom-left-radius: 8px !important;
+    }
+  }
+}
+.ant-table.ant-table-bordered > .ant-table-container {
+  border-left: none;
+}
+.ant-table.ant-table-bordered
+  > .ant-table-container
+  > .ant-table-header
+  > table
+  > thead
+  > tr
+  > th {
+  border-right: none;
+}
+.ant-table.ant-table-bordered
+  > .ant-table-container
+  > .ant-table-content
+  > table,
+.ant-table.ant-table-bordered
+  > .ant-table-container
+  > .ant-table-header
+  > table {
+  border-top: none;
+}
+.ant-table-container table > thead > tr:first-child th:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.ant-table-thead
+  > tr
+  > th:not(
+    :last-child,
+    .ant-table-selection-column,
+    .ant-table-row-expand-icon-cell,
+    [colspan]
+  )::before,
+.ant-table.ant-table-bordered
+  > .ant-table-container
+  > .ant-table-header
+  > table
+  > thead
+  > tr
+  > th::before {
+  background-color: #e6e7eb !important;
+}
+.ant-table-sticky-holder {
+  top: 64px !important;
+}
+
+.ant-table-ping-left .ant-table-cell-fix-left-first::after,
+.ant-table-ping-left .ant-table-cell-fix-left-last::after {
+  box-shadow: -1px 0 2px -1px rgba(0, 0, 0, 0.03),
+    -2px 0 4px -1px rgba(0, 0, 0, 0.03) !important;
+}
+
+.ant-table-ping-right .ant-table-cell-fix-right-first::after,
+.ant-table-ping-right .ant-table-cell-fix-right-last::after {
+  box-shadow: 1px 0 2px -1px rgba(0, 0, 0, 0.03),
+    2px 0 4px -1px rgba(0, 0, 0, 0.03) !important;
+}
+
+.ant-pagination {
+  .ant-pagination-item,
+  .ant-pagination-prev .ant-pagination-item-link,
+  .ant-pagination-next .ant-pagination-item-link {
+    border: none;
+  }
+  .ant-pagination-item-active {
+    background: #fa4b3a;
+    border-radius: 16px;
+    a {
+      color: #fff;
+    }
+  }
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    border: none;
+    box-shadow: none;
+  }
+  .ant-select-focused:not(.ant-select-disabled).ant-select:not(
+      .ant-select-customize-input
+    )
+    .ant-select-selector {
+    border: none;
+    box-shadow: none;
+  }
+}
+
+.ant-spin-container .ant-table-pagination.ant-pagination {
+  margin-top: 40px;
+}
+
+.nobreak-tooltip {
+  .ant-tooltip-inner {
+    padding: 12px 16px;
+    border-radius: 4px;
+    color: #222;
+    background: #fff;
+    white-space: nowrap;
+  }
+  .ant-tooltip-content {
+    width: max-content;
+  }
+  .ant-tooltip-arrow-content {
+    --antd-arrow-background-color: #fff;
+  }
+}
+
+.empty_table {
+  color: $primary-color;
+  cursor: pointer;
+
+  &:hover {
+    color: #ff9a75;
+  }
+}
+
+.ant-btn-default {
+  &:hover,
+  &:active,
+  &:focus {
+    color: #000;
+    border: 1px solid #ebebeb;
+    background: #f7f7f7;
+  }
+}
+
+// 全局表单项样式
+.ant-input,
+.ant-picker {
+  height: 40px;
+  padding: 4px 11px;
+  border-color: #ebebeb !important;
+  border-radius: 8px !important;
+  &:hover,
+  &:focus {
+    border-color: #ff7057 !important;
+  }
+}
+.ant-input-affix-wrapper {
+  padding: 0 !important;
+  border-color: #ebebeb !important;
+  border-radius: 8px !important;
+  &:hover,
+  &:focus {
+    border-color: #ff7057 !important;
+  }
+}
+.ant-input-group .ant-input-affix-wrapper:not(:last-child) {
+  border-radius: 8px 0 0 8px !important;
+}
+.ant-input-affix-wrapper > .ant-input:not(textarea) {
+  padding: 4px 11px !important;
+}
+.ant-input-suffix {
+  padding: 4px 11px 4px 0;
+}
+.ant-select-selector {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  border-color: #ebebeb !important;
+  border-radius: 8px !important;
+
+  &:hover,
+  &:focus {
+    border-color: #ff7057 !important;
+  }
+}
+.ant-select-open {
+  .ant-select-selector {
+    border-color: #ff7057 !important;
+  }
+}
+.ant-select-arrow {
+  transition: all 0.3s;
+}
+
+.ant-select-open .ant-select-arrow {
+  transform: rotate(180deg);
+}
+
+.ant-popover-inner {
+  border-radius: 8px;
+  box-shadow: 0 8px 30px -3px rgba(0, 0, 0, 0.06);
+}
+.ant-dropdown-menu {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.03),
+    0 10px 15px -3px rgba(0, 0, 0, 0.06);
+}
+.ant-checkbox .ant-checkbox-inner {
+  border-radius: 4px;
+  border: 1px solid #dbdbdb;
+  background: #fff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}

@@ -1,0 +1,140 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 32px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.12),
+    0 -1px 0 0 rgba(220, 220, 220, 0.8);
+  z-index: 1000;
+
+  img {
+    /* stylelint-disable-next-line */
+    image-rendering: -moz-crisp-edges;
+    /* Firefox */
+    image-rendering: -o-crisp-edges;
+    /* Opera */
+    /* stylelint-disable-next-line */
+    image-rendering: -webkit-optimize-contrast;
+    /* Webkit (non-standard naming) */
+    -ms-interpolation-mode: nearest-neighbor;
+    /* IE (non-standard property) */
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 28px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: 40px;
+
+    img {
+      display: block;
+      height: 100%;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  padding-top: 64px;
+}
+
+.new_background {
+  background: linear-gradient(
+    106.17deg,
+    #fff8f9 1.5%,
+    #f0fcff 81.06%
+  ) !important;
+  padding-top: 0;
+}
+
+.handler {
+  .dropdown {
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 3px 6px -4px rgb(0 0 0 / 12%), 0 6px 16px 0 rgb(0 0 0 / 8%),
+      0 9px 28px 8px rgb(0 0 0 / 5%);
+    border-radius: 4px;
+  }
+  .avatar {
+    background-color: rgba($primary-color, 0.12);
+    cursor: pointer;
+  }
+  a {
+    color: $primary-color;
+  }
+}
+
+.sider {
+  width: fit-content;
+  z-index: 9;
+  overflow-y: scroll;
+  background: linear-gradient(
+    155.96deg,
+    #fffafb 13.78%,
+    #f7fdff 33.74%,
+    #f5f7fa 74.32%
+  ) !important;
+  user-select: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  .menu {
+    width: 100%;
+    border-right: none;
+    padding-top: 24px;
+    padding-bottom: 40px;
+    // 改版
+    background: transparent;
+    border: none !important;
+  }
+}
+
+.siderTrigger {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 14px;
+  height: 50px;
+  line-height: 39px;
+  text-align: right;
+  border-top: 1px solid #d4d5d9;
+  background-color: #f5f7fa;
+  cursor: pointer;
+  z-index: 10;
+  width: 260px;
+  transition: all 0.2s;
+
+  .siderTriggerIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    border-radius: 4px;
+    transition: 0.3s all;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+  }
+
+  .siderTriggerText {
+    margin-left: 10px;
+  }
+}

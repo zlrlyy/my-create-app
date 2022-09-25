@@ -1,0 +1,133 @@
+$header-height: 64px;
+$content-width: 1280px;
+$blue-color: #4c70ff;
+
+.layout {
+  position: relative;
+  min-height: 100vh;
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  min-width: $content-width;
+  height: $header-height;
+  background-color: transparent;
+  z-index: 2;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.content {
+  position: relative;
+  padding-top: $header-height;
+  min-height: 100vh;
+  min-width: $content-width;
+  background-color: #fff;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 100%;
+    min-width: 500px;
+    background-color: #f5f6fa;
+    box-sizing: border-box;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex: 1;
+    min-height: calc(100vh - $header-height);
+    margin: 0 auto;
+    z-index: 1;
+    background-color: transparent;
+  }
+
+  &__hero {
+    display: flex;
+    flex-direction: column;
+    padding-right: 48px;
+    padding-left: 48px;
+    flex: 0 0 500px;
+  }
+
+  &__desc {
+    font-size: 32px;
+    font-weight: 500;
+    margin-top: 32px;
+    margin-bottom: 40px;
+    letter-spacing: -1px;
+
+    :global {
+      .block {
+        margin-bottom: 16px;
+      }
+
+      .en-US {
+        font-size: 30px;
+        white-space: nowrap;
+
+        .block {
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    text-align: center;
+    padding: 36px 0;
+
+    a {
+      color: #9c9ea6;
+
+      :hover {
+        color: #4465e6;
+      }
+    }
+  }
+
+  &__en-US {
+    &::before {
+      min-width: 600px;
+    }
+
+    .content__hero {
+      flex: 0 0 600px;
+    }
+  }
+}
+
+.back {
+  margin-bottom: 24px;
+  color: #9c9ea6;
+  transition: all 0.3s;
+
+  &:hover {
+    color: $blue-color;
+  }
+}
+
+.typography {
+  margin-bottom: 36px;
+
+  &__title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #232426;
+    margin: 0;
+  }
+
+  &__subtitle {
+    color: #9c9ea6;
+    margin: 12px 0 0;
+  }
+}
